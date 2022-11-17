@@ -24,8 +24,8 @@ For the presentation, we can do a demo of the terrain surface generation. We can
 
 
 ### Deliverables
-- Correct implementation of the marching cube algorithm
-- Generation of a terrain model using marching cube algorithm and noise
-- Parametrization of elevation with a slider to acquire a different form of terrain. 
-- (Optional) Added interactions with the scene, e.g. moving camera 
-- (Optional) Infinite terrain generation while moving the camera
+- Correct implementation of the marching cube algorithm;
+- Generation of a terrain model using marching cube algorithm and noise;
+- Parametrization of elevation with a slider to acquire a different form of terrain;
+- (Optional) Added interactions with the scene, e.g. moving camera;
+- (Optional) Infinite terrain generation while moving the camera.
