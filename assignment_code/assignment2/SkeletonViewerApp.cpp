@@ -40,6 +40,7 @@ void SkeletonViewerApp::SetupScene() {
   SceneNode& root = scene_->GetRootNode();
 
   auto camera_node = make_unique<ArcBallCameraNode>(45.f, 0.75f, 3.0f);
+  camera_node->GetTransform().SetPosition(glm::vec3(0.f,-1.f,0.f));
   scene_->ActivateCamera(camera_node->GetComponentPtr<CameraComponent>());
   root.AddChild(std::move(camera_node));
 
@@ -59,10 +60,14 @@ void SkeletonViewerApp::SetupScene() {
 
   std::function<float(glm::vec3)> func = [](glm::vec3 point) {
                                               //return point[0]*point[1]*point[2];
-                                              return glm::cos(8*point[0]) + glm::sin(7*point[1]) - glm::cos(8*point[2]) ;
+                                              float r1 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+                                              float r2 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+                                              float r3 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+                                              return r1*point[0]*point[1]*point[2];
+                                              //return r2* (r1*glm::cos(8*point[0]) + (r3 * glm::sin(point[1]) + (1 -r3)* glm::cos(point[1]))) - glm::cos(point[2]) ;
                                             };
-  IsoSurface isosurface = IsoSurface(func, 0.0f);
-  auto grid_node = make_unique<Grid>(glm::vec3(0.f,0.f,0.f), 0.15, 5, 5, 5, isosurface);
+  IsoSurface isosurface = IsoSurface(func, 0.5f);
+  auto grid_node = make_unique<Grid>(glm::vec3(-7.5f,-1.5f,-7.5f), 0.15, 100, 20, 100, isosurface);
   root.AddChild(std::move(grid_node));
 }
 

@@ -494,6 +494,7 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.o: /Users/joshua
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/ShadingComponent.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/MaterialComponent.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/Material.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/InputManager.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/string_cast.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/glm.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/type_precision.hpp \

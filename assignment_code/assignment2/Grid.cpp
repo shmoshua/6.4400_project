@@ -4,6 +4,7 @@
 #include "gloo/components/RenderingComponent.hpp"
 #include "gloo/components/ShadingComponent.hpp"
 #include "gloo/components/MaterialComponent.hpp"
+#include "gloo/InputManager.hpp"
 #include <glm/gtx/string_cast.hpp>
 
 namespace GLOO {
@@ -151,6 +152,9 @@ void Grid::addInterpolationPoints(){
 
     std::unique_ptr<PositionArray> surface_points = make_unique<PositionArray>();
     std::unique_ptr<IndexArray> surface_indices = make_unique<IndexArray>();
+    //std::unique_ptr<NormalArray> surface_normals = make_unique<NormalArray>();
+
+    std::vector<glm::vec3> normals;
 
     for (int i = 0; i < x; i++){
         for (int j = 0; j < y; j++){
@@ -163,9 +167,11 @@ void Grid::addInterpolationPoints(){
                         std::pair<int, int> neighbors = getAdjacentVertexIndices(m);
                         glm::vec3 point = interpolate(getIndex(i,j,k,neighbors.first), getIndex(i,j,k,neighbors.second));
                         surface_points->push_back(point);
+                        normals.push_back(glm::vec3(0.f, 0.f,0.f));
                     }
                     else {
                         surface_points->push_back(glm::vec3(0,0,0));
+                        normals.push_back(glm::vec3(0.f, 0.f,0.f));
                     }
                     l <<= 1;
                 }
@@ -176,29 +182,58 @@ void Grid::addInterpolationPoints(){
                 int offset = 12 * getCubeIndex(i,j,k);
                 while (triangles[m] != -1){
                     surface_indices->push_back(offset + triangles[m]);
-                    m += 1;
-                }
+                    surface_indices->push_back(offset + triangles[m+1]);
+                    surface_indices->push_back(offset + triangles[m+2]);
 
+                    glm::vec3 p0 = surface_points->at(offset + triangles[m]);
+                    glm::vec3 p1 = surface_points->at(offset + triangles[m+1]);
+                    glm::vec3 p2 = surface_points->at(offset + triangles[m+2]);
+
+                    glm::vec3 normal = glm::cross(p1-p0, p2-p0);
+                    float area = 0.5f* glm::length(normal);
+
+                    normals[offset + triangles[m]] += area*normal;
+                    normals[offset + triangles[m+1]] += area*normal;
+                    normals[offset + triangles[m+2]] += area*normal;
+
+                    m += 3;
+                }
             }
         }
     }
 
-    // for (int i = 0; i < (*surface_points).size(); i++){
-    //     std::cout << glm::to_string(surface_points->at(i)) << std::endl;
-    // }
+    for (int c = 0; c < normals.size(); c++){
+        normals[c] = glm::normalize(normals[c]);
+    }
 
-    // for (int i = 0; i < (*surface_indices).size(); i++){
-    //     std::cout << surface_indices->at(i) << std::endl;
-    // }
-
+    surface_line_->UpdateNormals(make_unique<NormalArray>(normals));
     surface_line_->UpdatePositions(std::move(surface_points));
     surface_line_->UpdateIndices(std::move(surface_indices));
+    //surface_line_->UpdateNormals(std::move(surface_normals));
     auto surface_node = make_unique<SceneNode>();
-    surface_node->CreateComponent<ShadingComponent>(polyline_shader_);
+    surface_node->CreateComponent<ShadingComponent>(phong_shader_);
     auto& rc = surface_node->CreateComponent<RenderingComponent>(surface_line_);
     surface_node->CreateComponent<MaterialComponent>(std::make_shared<Material>(Material::GetDefault()));
     rc.SetDrawMode(DrawMode::Triangles);
     AddChild(std::move(surface_node));
+}
+
+void Grid::Update(double delta_time) {
+  // Prevent multiple toggle.
+  static bool prev_released = true;
+  if (InputManager::GetInstance().IsKeyPressed('G')) {
+    if (prev_released) {
+        showGrid = 1 - showGrid;
+      ToggleGrid();
+    }
+    prev_released = false;
+  } else if (InputManager::GetInstance().IsKeyReleased('G')) {
+    prev_released = true;
+  }
+}
+
+void Grid::ToggleGrid(){
+    grid->SetActive(showGrid);
 }
 
 

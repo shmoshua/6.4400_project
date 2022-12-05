@@ -36,6 +36,7 @@ class Grid : public SceneNode {
         std::vector<int> edgeVectors_;
 
         SceneNode* grid;
+        bool showGrid=true;
 
         std::shared_ptr<PhongShader> phong_shader_ = std::make_shared<PhongShader>();
         std::shared_ptr<SimpleShader> polyline_shader_ = std::make_shared<SimpleShader>();
@@ -49,6 +50,9 @@ class Grid : public SceneNode {
         void computeValues();
         void drawGrid();
         void computeCubeIndex();
+
+        void Update(double delta_time) override;
+        void ToggleGrid();
         
         void addInterpolationPoints();
         std::pair<int, int> getAdjacentVertexIndices(int edgeIndex);
