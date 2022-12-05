@@ -485,8 +485,51 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.o: \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/BindableBuffer.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/BindGuard.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/PrimitiveFactory.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/PhongShader.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/RenderingComponent.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/components/ShadingComponent.hpp
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/components/ShadingComponent.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/components/MaterialComponent.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/Material.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/string_cast.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/../glm.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/../gtc/type_precision.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../gtc/quaternion.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../gtc/vec1.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_bool1.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_bool1_precision.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_float1.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_float1_precision.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_double1.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_double1_precision.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_int1.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_int1_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/./ext/../ext/vector_int1.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_uint1.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_uint1_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/./ext/../ext/vector_uint1.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_int2_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_int3_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_int4_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/scalar_int_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_uint2_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_uint3_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/vector_uint4_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../ext/scalar_uint_sized.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../detail/type_vec2.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../detail/type_mat2x2.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../detail/type_mat2x3.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../detail/type_mat2x4.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../detail/type_mat3x2.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../detail/type_mat3x4.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../detail/type_mat4x2.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/../detail/type_mat4x3.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtc/type_precision.inl \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/../gtc/quaternion.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/../gtx/dual_quaternion.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/../gtc/constants.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/dual_quaternion.inl \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/../geometric.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/string_cast.inl \
+  /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/cstdarg

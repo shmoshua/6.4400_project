@@ -57,10 +57,13 @@ void SkeletonViewerApp::SetupScene() {
   sun_light_node->CreateComponent<LightComponent>(sun_light);
   root.AddChild(std::move(sun_light_node));
 
-  IsoSurface isosurface = IsoSurface([](glm::vec3 point) {return 0;}, 0.5f);
-  auto grid_node = make_unique<Grid>(glm::vec3(0.f,0.f,0.f), 0.1, 10, 10, 10, isosurface);
+  std::function<float(glm::vec3)> func = [](glm::vec3 point) {
+                                              //return point[0]*point[1]*point[2];
+                                              return glm::cos(8*point[0]) + glm::sin(7*point[1]) - glm::cos(8*point[2]) ;
+                                            };
+  IsoSurface isosurface = IsoSurface(func, 0.0f);
+  auto grid_node = make_unique<Grid>(glm::vec3(0.f,0.f,0.f), 0.15, 5, 5, 5, isosurface);
   root.AddChild(std::move(grid_node));
-
 }
 
 void SkeletonViewerApp::DrawGUI() {

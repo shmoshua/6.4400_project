@@ -498,4 +498,5 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: 
   /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/Grid.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/IsoSurface.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/PrimitiveFactory.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/PhongShader.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp
