@@ -27,6 +27,7 @@ Grid::Grid(glm::vec3 origin, float d_, int x_, int y_, int z_, IsoSurface isosur
 }
 
 void Grid::computeValues(){
+    values_.clear();
     values_.reserve((x+1)*(y+1)*(z+1));
     for (int i = 0; i <= x; i++){
         for (int j = 0; j <= y; j++){
@@ -41,6 +42,7 @@ void Grid::computeValues(){
 }
 
 void Grid::computePositions(){
+    positions_.clear();
     positions_.reserve((x+1)*(y+1)*(z+1));
     for (int i = 0; i <= x; i++){
         for (int j = 0; j <= y; j++){
@@ -116,6 +118,8 @@ void Grid::drawGrid(){
 }
 
 void Grid::computeCubeIndex(){
+    cubeIndices_.clear();
+    edgeVectors_.clear();
     cubeIndices_.reserve(x*y*z);
     edgeVectors_.reserve(x*y*z);
     for (int i = 0; i < x; i++){
@@ -236,6 +240,34 @@ void Grid::ToggleGrid(){
     grid->SetActive(showGrid);
 }
 
+ 
+void Grid::LinkControl(const std::vector<SkeletonNode::EulerAngle*>& values,
+                        const std::vector<SkeletonNode::IntNode*>& dims) {
+    linked_values_ = values;
+    dim_values_ = dims;
+
+}
+
+void Grid::OnChangedValue() {
+    isosurface_.epsilon_ = linked_values_[0]->rx;
+
+   // computePositions();
+   // computeValues();
+    computeCubeIndex();
+    addInterpolationPoints();
+}
+
+void Grid::OnChangedDimension() {
+    x = dim_values_[0]->x;
+    y = dim_values_[1]->x;
+    z = dim_values_[2]->x;
+    d = linked_values_[1]->rx;
+    computePositions();
+    computeValues();
+    drawGrid();
+    computeCubeIndex();
+    addInterpolationPoints();
+}
 
 
 }
