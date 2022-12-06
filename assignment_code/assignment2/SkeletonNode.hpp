@@ -16,6 +16,10 @@ class SkeletonNode : public SceneNode {
     float rx, ry, rz;
   };
 
+  struct IntNode {
+    int x, y, z;
+  };
+
   int n; //number of vertices;
   int m; //number of joints;
 
