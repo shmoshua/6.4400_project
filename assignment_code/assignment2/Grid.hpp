@@ -9,6 +9,8 @@
 #include "gloo/shaders/PhongShader.hpp"
 #include "gloo/shaders/SimpleShader.hpp"
 
+#include "SkeletonNode.hpp"
+
 #include <string>
 #include <vector>
 
@@ -43,8 +45,15 @@ class Grid : public SceneNode {
         std::shared_ptr<VertexObject> structure_line_ = std::make_shared<VertexObject>(); //grid line
 
         std::shared_ptr<VertexObject> surface_line_ = std::make_shared<VertexObject>();
+    
+        std::vector<SkeletonNode::EulerAngle*> linked_values_;
+        std::vector<SkeletonNode::IntNode*> dim_values_;
 
         Grid(glm::vec3 origin, float d_, int x_, int y_, int z_, IsoSurface isosurface);
+    
+        void LinkControl(const std::vector<SkeletonNode::EulerAngle*>&, const std::vector<SkeletonNode::IntNode*>&);
+        void OnChangedValue();
+        void OnChangedDimension();
         
         void computePositions();
         void computeValues();
