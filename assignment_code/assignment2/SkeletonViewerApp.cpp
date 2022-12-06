@@ -9,24 +9,7 @@
 #include "Grid.hpp"
 
 namespace {
-const std::vector<std::string> kJointNames = {"Root",
-                                              "Chest",
-                                              "Waist",
-                                              "Neck",
-                                              "Right hip",
-                                              "Right leg",
-                                              "Right knee",
-                                              "Right foot",
-                                              "Left hip",
-                                              "Left leg",
-                                              "Left knee",
-                                              "Left foot",
-                                              "Right collarbone",
-                                              "Right shoulder",
-                                              "Right elbow",
-                                              "Left collarbone",
-                                              "Left shoulder",
-                                              "Left elbow"};
+const std::vector<std::string> kJointNames = {"Threshold", "Size D", "Size X", "Size Y", "Size Z"};
 }
 
 namespace GLOO {
@@ -34,7 +17,8 @@ namespace GLOO {
 SkeletonViewerApp::SkeletonViewerApp(const std::string& app_name,
                                      glm::ivec2 window_size)
     : Application(app_name, window_size),
-      slider_values_(kJointNames.size(), {0.f, 0.f, 0.f}){}
+      slider_values_(2, {0.f, 0.f, 0.f}),
+    dim_values_(3, {5, 5, 5}) {}
 
 void SkeletonViewerApp::SetupScene() {
   SceneNode& root = scene_->GetRootNode();
@@ -67,25 +51,55 @@ void SkeletonViewerApp::SetupScene() {
                                               //return r2* (r1*glm::cos(8*point[0]) + (r3 * glm::sin(point[1]) + (1 -r3)* glm::cos(point[1]))) - glm::cos(point[2]) ;
                                             };
   IsoSurface isosurface = IsoSurface(func, 0.5f);
-  auto grid_node = make_unique<Grid>(glm::vec3(-7.5f,-1.5f,-7.5f), 0.15, 100, 20, 100, isosurface);
+  auto grid_node = make_unique<Grid>(glm::vec3(-7.5f,-1.5f,-7.5f), 0.15, 5, 5, 5, isosurface);
+  
+  
+  grid_ptr_ = grid_node.get();
+
+  std::vector<SkeletonNode::EulerAngle*> angles;
+  std::vector<SkeletonNode::IntNode*> dims;
+  slider_values_[1].rx = 0.15;
+  for (size_t i = 0; i < slider_values_.size(); i++) {
+      angles.push_back(&slider_values_[i]);
+  }
+  for (int i = 0; i < dim_values_.size(); ++i) {
+      dims.push_back(&dim_values_[i]);
+  }
+  grid_ptr_->LinkControl(angles, dims);
+  
   root.AddChild(std::move(grid_node));
 }
 
 void SkeletonViewerApp::DrawGUI() {
-  bool modified = false;
+  bool modifiedval = false;
+  bool modifieddim = false;
   ImGui::Begin("Control Panel");
-  for (size_t i = 0; i < kJointNames.size(); i++) {
-    ImGui::Text("%s", kJointNames[i].c_str());
-    ImGui::PushID((int)i);
-    modified |= ImGui::SliderFloat("x", &slider_values_[i].rx, -kPi, kPi);
-    modified |= ImGui::SliderFloat("y", &slider_values_[i].ry, -kPi, kPi);
-    modified |= ImGui::SliderFloat("z", &slider_values_[i].rz, -kPi, kPi);
-    ImGui::PopID();
+  for (size_t i = 0; i < 5; i++) {
+      ImGui::Text("%s", kJointNames[i].c_str());
+      ImGui::PushID((int)i);
+      //std::cout << i << std::endl;
+      if (i == 0) {
+          modifiedval |= ImGui::SliderFloat("", &slider_values_[0].rx, 0.0f, 1.0f);
+          //modified |= ImGui::SliderFloat("y", &slider_values_[i].ry, -kPi, kPi);
+         // modifiedval |= ImGui::SliderFloat("z", &slider_values_[i].rz, -kPi, kPi);
+      }
+      else if (i == 1) {
+          modifieddim |= ImGui::SliderFloat("", &slider_values_[1].rx, 0.05f, 0.4f);
+      }
+      else {
+          modifieddim |= ImGui::SliderInt("", &dim_values_[i - 2].x, 5, 10);
+          //modifieddim |= ImGui::SliderInt("", &dim_values_[i - 1].x, 5, 10);
+          //modifieddim |= ImGui::SliderInt("", &dim_values_[i - 1].x, 5, 10);
+      }
+      ImGui::PopID();
   }
   ImGui::End();
 
-  if (modified) {
-    skeletal_node_ptr_->OnJointChanged();
+  if (modifiedval) {
+    grid_ptr_->OnChangedValue();
+  }
+  if (modifieddim) {
+      grid_ptr_->OnChangedDimension();
   }
 }
 }  // namespace GLOO
