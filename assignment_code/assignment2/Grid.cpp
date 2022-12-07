@@ -13,17 +13,24 @@ Grid::Grid(glm::vec3 origin, float d_, int x_, int y_, int z_, IsoSurface isosur
     computePositions();
     computeValues();
     drawGrid();
+
+    auto mesh_node = make_unique<SceneNode>();
+    mesh_node->CreateComponent<ShadingComponent>(polyline_shader_);
+    auto& rc = mesh_node->CreateComponent<RenderingComponent>(structure_line_);
+    rc.SetDrawMode(DrawMode::Lines);
+    grid = mesh_node.get();
+    AddChild(std::move(mesh_node));
+
     computeCubeIndex();
     std::cout << "Values range between [" << minVal << ", " << maxVal << "]" << std::endl;
-
-    
-    // for (auto c : values_){
-    //     std::cout << c << std::endl;
-    // }
-    // for (auto c : cubeIndices_){
-    //     std::cout << c << std::endl;
-    // }
     addInterpolationPoints();
+
+    auto surface_node = make_unique<SceneNode>();
+    surface_node->CreateComponent<ShadingComponent>(phong_shader_);
+    auto& bc = surface_node->CreateComponent<RenderingComponent>(surface_line_);
+    surface_node->CreateComponent<MaterialComponent>(std::make_shared<Material>(Material::GetDefault()));
+    bc.SetDrawMode(DrawMode::Triangles);
+    AddChild(std::move(surface_node));
 }
 
 void Grid::computeValues(){
@@ -89,7 +96,6 @@ std::pair<int, int> Grid::getAdjacentVertexIndices(int edgeIndex){
 
 void Grid::drawGrid(){
     std::unique_ptr<IndexArray> indices = make_unique<IndexArray>();
-
     for (int i = 0; i <= x; i++){
         for (int j = 0; j <= y; j++){
             for (int k = 0; k <= z; k++){
@@ -109,12 +115,7 @@ void Grid::drawGrid(){
         }
     }
     structure_line_->UpdateIndices(std::move(indices));
-    auto mesh_node = make_unique<SceneNode>();
-    mesh_node->CreateComponent<ShadingComponent>(polyline_shader_);
-    auto& rc = mesh_node->CreateComponent<RenderingComponent>(structure_line_);
-    rc.SetDrawMode(DrawMode::Lines);
-    grid = mesh_node.get();
-    AddChild(std::move(mesh_node));
+    
 }
 
 void Grid::computeCubeIndex(){
@@ -214,12 +215,6 @@ void Grid::addInterpolationPoints(){
     surface_line_->UpdatePositions(std::move(surface_points));
     surface_line_->UpdateIndices(std::move(surface_indices));
     //surface_line_->UpdateNormals(std::move(surface_normals));
-    auto surface_node = make_unique<SceneNode>();
-    surface_node->CreateComponent<ShadingComponent>(phong_shader_);
-    auto& rc = surface_node->CreateComponent<RenderingComponent>(surface_line_);
-    surface_node->CreateComponent<MaterialComponent>(std::make_shared<Material>(Material::GetDefault()));
-    rc.SetDrawMode(DrawMode::Triangles);
-    AddChild(std::move(surface_node));
 }
 
 void Grid::Update(double delta_time) {
@@ -245,7 +240,6 @@ void Grid::LinkControl(const std::vector<SkeletonNode::EulerAngle*>& values,
                         const std::vector<SkeletonNode::IntNode*>& dims) {
     linked_values_ = values;
     dim_values_ = dims;
-
 }
 
 void Grid::OnChangedValue() {

@@ -489,14 +489,14 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: 
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/VertexBuffer.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/BindableBuffer.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/BindGuard.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/cameras/ArcBallCameraNode.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/AmbientLight.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/DirectionalLight.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/AxisNode.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/Grid.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/IsoSurface.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/PrimitiveFactory.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/PhongShader.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/cameras/ArcBallCameraNode.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/AmbientLight.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/DirectionalLight.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/AxisNode.hpp

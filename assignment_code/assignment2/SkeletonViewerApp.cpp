@@ -51,7 +51,7 @@ void SkeletonViewerApp::SetupScene() {
                                               //return r2* (r1*glm::cos(8*point[0]) + (r3 * glm::sin(point[1]) + (1 -r3)* glm::cos(point[1]))) - glm::cos(point[2]) ;
                                             };
   IsoSurface isosurface = IsoSurface(func, 0.5f);
-  auto grid_node = make_unique<Grid>(glm::vec3(-7.5f,-1.5f,-7.5f), 0.15, 5, 5, 5, isosurface);
+  auto grid_node = make_unique<Grid>(glm::vec3(-7.5f,-1.5f,-7.5f), 0.15, 100, 20, 100, isosurface);
   
   
   grid_ptr_ = grid_node.get();
@@ -99,7 +99,7 @@ void SkeletonViewerApp::DrawGUI() {
     grid_ptr_->OnChangedValue();
   }
   if (modifieddim) {
-      grid_ptr_->OnChangedDimension();
+    grid_ptr_->OnChangedDimension();
   }
 }
 }  // namespace GLOO

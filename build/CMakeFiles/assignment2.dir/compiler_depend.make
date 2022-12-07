@@ -490,6 +490,7 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.o: /Users/joshua
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/PhongShader.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/RenderingComponent.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/ShadingComponent.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/MaterialComponent.hpp \
@@ -536,6 +537,8 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.o: /Users/joshua
   /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/geometric.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/string_cast.inl \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/cstdarg
+
+CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/IsoSurface.cpp
 
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.cpp \
   /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp \
@@ -1589,17 +1592,17 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: 
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/VertexBuffer.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/BindableBuffer.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/BindGuard.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/cameras/ArcBallCameraNode.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/AmbientLight.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/DirectionalLight.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/AxisNode.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/Grid.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/IsoSurface.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/PrimitiveFactory.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/PhongShader.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/cameras/ArcBallCameraNode.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/AmbientLight.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/DirectionalLight.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/AxisNode.hpp
 
 CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/main.cpp \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/iostream \
@@ -2091,8 +2094,13 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: /Users/joshua
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/VertexBuffer.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/BindableBuffer.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/gl_wrapper/BindGuard.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp \
-  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp
+  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/Grid.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/IsoSurface.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/PrimitiveFactory.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/PhongShader.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp
 
 CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/common/helpers.cpp \
   /Users/joshua/Desktop/CG/6.4400_project/assignment_code/common/helpers.hpp
@@ -13004,9 +13012,9 @@ CMakeFiles/assignment2.dir/gloo/utils.cpp.o: /Users/joshua/Desktop/CG/6.4400_pro
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/fstream:
 
-/Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp:
-
 /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.cpp:
+
+/Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/IsoSurface.cpp:
 
 /Users/joshua/Desktop/CG/6.4400_project/external/src/glm-0.9.9.8/glm/gtx/string_cast.inl:
 
@@ -13031,6 +13039,8 @@ CMakeFiles/assignment2.dir/gloo/utils.cpp.o: /Users/joshua/Desktop/CG/6.4400_pro
 /Users/joshua/Desktop/CG/6.4400_project/gloo/components/MaterialComponent.hpp:
 
 /Users/joshua/Desktop/CG/6.4400_project/gloo/components/RenderingComponent.hpp:
+
+/Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp:
 
 /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp:
 

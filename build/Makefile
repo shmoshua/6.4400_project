@@ -224,6 +224,30 @@ assignment_code/assignment2/Grid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.s
 .PHONY : assignment_code/assignment2/Grid.cpp.s
 
+assignment_code/assignment2/IsoSurface.o: assignment_code/assignment2/IsoSurface.cpp.o
+.PHONY : assignment_code/assignment2/IsoSurface.o
+
+# target to build an object file
+assignment_code/assignment2/IsoSurface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.o
+.PHONY : assignment_code/assignment2/IsoSurface.cpp.o
+
+assignment_code/assignment2/IsoSurface.i: assignment_code/assignment2/IsoSurface.cpp.i
+.PHONY : assignment_code/assignment2/IsoSurface.i
+
+# target to preprocess a source file
+assignment_code/assignment2/IsoSurface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.i
+.PHONY : assignment_code/assignment2/IsoSurface.cpp.i
+
+assignment_code/assignment2/IsoSurface.s: assignment_code/assignment2/IsoSurface.cpp.s
+.PHONY : assignment_code/assignment2/IsoSurface.s
+
+# target to generate assembly for a file
+assignment_code/assignment2/IsoSurface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.s
+.PHONY : assignment_code/assignment2/IsoSurface.cpp.s
+
 assignment_code/assignment2/SkeletonNode.o: assignment_code/assignment2/SkeletonNode.cpp.o
 .PHONY : assignment_code/assignment2/SkeletonNode.o
 
@@ -1106,6 +1130,9 @@ help:
 	@echo "... assignment_code/assignment2/Grid.o"
 	@echo "... assignment_code/assignment2/Grid.i"
 	@echo "... assignment_code/assignment2/Grid.s"
+	@echo "... assignment_code/assignment2/IsoSurface.o"
+	@echo "... assignment_code/assignment2/IsoSurface.i"
+	@echo "... assignment_code/assignment2/IsoSurface.s"
 	@echo "... assignment_code/assignment2/SkeletonNode.o"
 	@echo "... assignment_code/assignment2/SkeletonNode.i"
 	@echo "... assignment_code/assignment2/SkeletonNode.s"

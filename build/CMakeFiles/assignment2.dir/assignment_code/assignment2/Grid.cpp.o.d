@@ -488,6 +488,7 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.o: \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/PhongShader.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/ShaderProgram.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/shaders/SimpleShader.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/RenderingComponent.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/ShadingComponent.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/components/MaterialComponent.hpp \

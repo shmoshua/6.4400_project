@@ -43,7 +43,6 @@ class Grid : public SceneNode {
         std::shared_ptr<PhongShader> phong_shader_ = std::make_shared<PhongShader>();
         std::shared_ptr<SimpleShader> polyline_shader_ = std::make_shared<SimpleShader>();
         std::shared_ptr<VertexObject> structure_line_ = std::make_shared<VertexObject>(); //grid line
-
         std::shared_ptr<VertexObject> surface_line_ = std::make_shared<VertexObject>();
     
         std::vector<SkeletonNode::EulerAngle*> linked_values_;
