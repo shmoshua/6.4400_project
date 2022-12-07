@@ -499,4 +499,5 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: 
   /Users/joshua/Desktop/CG/6.4400_project/gloo/cameras/ArcBallCameraNode.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/AmbientLight.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/DirectionalLight.hpp \
+  /Users/joshua/Desktop/CG/6.4400_project/gloo/lights/PointLight.hpp \
   /Users/joshua/Desktop/CG/6.4400_project/gloo/debug/AxisNode.hpp

@@ -58,11 +58,15 @@ class Grid : public SceneNode {
         void computeValues();
         void drawGrid();
         void computeCubeIndex();
+        void computeNormals();
+        void computeNormals2();
 
         void Update(double delta_time) override;
         void ToggleGrid();
         
         void addInterpolationPoints();
+        void addPoints();
+        int diff(int i, int j, int k, int m);
         std::pair<int, int> getAdjacentVertexIndices(int edgeIndex);
 
         glm::vec3 getVertexPosition(int vertexIndex);

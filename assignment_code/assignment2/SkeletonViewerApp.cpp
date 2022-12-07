@@ -4,6 +4,7 @@
 #include "gloo/cameras/ArcBallCameraNode.hpp"
 #include "gloo/lights/AmbientLight.hpp"
 #include "gloo/lights/DirectionalLight.hpp"
+#include "gloo/lights/PointLight.hpp"
 #include "gloo/components/LightComponent.hpp"
 #include "gloo/debug/AxisNode.hpp"
 #include "Grid.hpp"
@@ -42,16 +43,29 @@ void SkeletonViewerApp::SetupScene() {
   sun_light_node->CreateComponent<LightComponent>(sun_light);
   root.AddChild(std::move(sun_light_node));
 
+  auto point_light = std::make_shared<PointLight>();
+  point_light->SetDiffuseColor(glm::vec3(0.9f, 0.9f, 0.9f));
+  point_light->SetSpecularColor(glm::vec3(1.0f, 1.0f, 1.0f));
+  point_light->SetAttenuation(glm::vec3(1.0f, 0.09f, 0.032f));
+  auto point_light_node = make_unique<SceneNode>();
+  point_light_node->CreateComponent<LightComponent>(point_light);
+  point_light_node->GetTransform().SetPosition(glm::vec3(0.0f, 10.0f, 10.f));
+  root.AddChild(std::move(point_light_node));
+
   std::function<float(glm::vec3)> func = [](glm::vec3 point) {
                                               //return point[0]*point[1]*point[2];
-                                              float r1 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-                                              float r2 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-                                              float r3 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-                                              return r1*point[0]*point[1]*point[2];
+                                              //float r1 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+                                              //float r2 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+                                              //float r3 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+                                              //return glm::sin(glm::length(10.f * point))* 10.f * point[0] + glm::sin(glm::length(10.f * point))* 10.f * point[1];
+                                              //return glm::sin(point[0]*point[1] + point[1]*point[2] + point[0]*point[2]) + glm::sin(point[0]*point[1]) + glm::sin(point[0]*point[2]) + glm::sin(point[2]*point[1]);
+                                              //return point[0]*point[1]*point[2];
+                                              return point[0]* point[0] + point[1]*point[1] +point[2] *point[2];
+                                              //return point[0]* point[0] +point[2] *point[2];
                                               //return r2* (r1*glm::cos(8*point[0]) + (r3 * glm::sin(point[1]) + (1 -r3)* glm::cos(point[1]))) - glm::cos(point[2]) ;
                                             };
-  IsoSurface isosurface = IsoSurface(func, 0.5f);
-  auto grid_node = make_unique<Grid>(glm::vec3(-7.5f,-1.5f,-7.5f), 0.15, 100, 20, 100, isosurface);
+  IsoSurface isosurface = IsoSurface(func, 0.4f);
+  auto grid_node = make_unique<Grid>(glm::vec3(-5.f,-5.f,-5.f), 0.1, 100, 100,100, isosurface);
   
   
   grid_ptr_ = grid_node.get();
