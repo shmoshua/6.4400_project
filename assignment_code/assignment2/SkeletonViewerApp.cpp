@@ -58,15 +58,14 @@ void SkeletonViewerApp::SetupScene() {
                                               //float r2 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
                                               //float r3 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
                                               //return glm::sin(glm::length(10.f * point))* 10.f * point[0] + glm::sin(glm::length(10.f * point))* 10.f * point[1];
-                                              //return glm::sin(point[0]*point[1] + point[1]*point[2] + point[0]*point[2]) + glm::sin(point[0]*point[1]) + glm::sin(point[0]*point[2]) + glm::sin(point[2]*point[1]);
+                                              return glm::sin(point[0]*point[1] + point[1]*point[2] + point[0]*point[2]) + glm::sin(point[0]*point[1]) + glm::sin(point[0]*point[2]) + glm::sin(point[2]*point[1]);
                                               //return point[0]*point[1]*point[2];
-                                              return point[0]* point[0] + point[1]*point[1] +point[2] *point[2];
+                                              //return point[0]* point[0] + point[1]*point[1] +point[2] *point[2];
                                               //return point[0]* point[0] +point[2] *point[2];
                                               //return r2* (r1*glm::cos(8*point[0]) + (r3 * glm::sin(point[1]) + (1 -r3)* glm::cos(point[1]))) - glm::cos(point[2]) ;
                                             };
   IsoSurface isosurface = IsoSurface(func, 0.4f);
   auto grid_node = make_unique<Grid>(glm::vec3(-5.f,-5.f,-5.f), 0.1, 100, 100,100, isosurface);
-  
   
   grid_ptr_ = grid_node.get();
 
@@ -98,10 +97,10 @@ void SkeletonViewerApp::DrawGUI() {
          // modifiedval |= ImGui::SliderFloat("z", &slider_values_[i].rz, -kPi, kPi);
       }
       else if (i == 1) {
-          modifieddim |= ImGui::SliderFloat("", &slider_values_[1].rx, 0.05f, 0.4f);
+          modifieddim |= ImGui::SliderFloat("", &slider_values_[1].rx, 0.05f, 0.25f);
       }
       else {
-          modifieddim |= ImGui::SliderInt("", &dim_values_[i - 2].x, 5, 10);
+          modifieddim |= ImGui::SliderInt("", &dim_values_[i - 2].x, 5, 100);
           //modifieddim |= ImGui::SliderInt("", &dim_values_[i - 1].x, 5, 10);
           //modifieddim |= ImGui::SliderInt("", &dim_values_[i - 1].x, 5, 10);
       }
