@@ -52,20 +52,16 @@ void SkeletonViewerApp::SetupScene() {
   point_light_node->GetTransform().SetPosition(glm::vec3(0.0f, 10.0f, 10.f));
   root.AddChild(std::move(point_light_node));
 
-  std::function<float(glm::vec3)> func = [](glm::vec3 point) {
-                                              //return point[0]*point[1]*point[2];
-                                              //float r1 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-                                              //float r2 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-                                              //float r3 = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-                                              //return glm::sin(glm::length(10.f * point))* 10.f * point[0] + glm::sin(glm::length(10.f * point))* 10.f * point[1];
-                                              return glm::sin(point[0]*point[1] + point[1]*point[2] + point[0]*point[2]) + glm::sin(point[0]*point[1]) + glm::sin(point[0]*point[2]) + glm::sin(point[2]*point[1]);
-                                              //return point[0]*point[1]*point[2];
-                                              //return point[0]* point[0] + point[1]*point[1] +point[2] *point[2];
-                                              //return point[0]* point[0] +point[2] *point[2];
-                                              //return r2* (r1*glm::cos(8*point[0]) + (r3 * glm::sin(point[1]) + (1 -r3)* glm::cos(point[1]))) - glm::cos(point[2]) ;
-                                            };
-  IsoSurface isosurface = IsoSurface(func, 0.4f);
-  auto grid_node = make_unique<Grid>(glm::vec3(-5.f,-5.f,-5.f), 0.1, 100, 100,100, isosurface);
+  std::function<float(glm::vec3)> sphere = [](glm::vec3 point) {return point[0]* point[0] + point[1]*point[1] +point[2] *point[2];};
+  std::function<float(glm::vec3)> y_cylinder = [](glm::vec3 point) {return point[0]* point[0] + point[2] *point[2];};
+  std::function<float(glm::vec3)> x_cylinder = [](glm::vec3 point) {return point[1]* point[1] + point[2] *point[2];};
+  std::function<float(glm::vec3)> simple = [](glm::vec3 point) {return point[0]*point[1]*point[2];};
+  std::function<float(glm::vec3)> cube1 = [](glm::vec3 point) {return glm::sin(glm::length(10.f * point))* 10.f * point[0] + glm::sin(glm::length(10.f * point))* 10.f * point[1];};
+  std::function<float(glm::vec3)> cube2 = [](glm::vec3 point) {return glm::sin(point[0]*point[1] + point[1]*point[2] + point[0]*point[2]) + glm::sin(point[0]*point[1]) + glm::sin(point[0]*point[2]) + glm::sin(point[2]*point[1]);};
+  std::function<float(glm::vec3)> func = [](glm::vec3 point) {return 0;};
+
+  IsoSurface isosurface = IsoSurface(cube1, 0.4f);
+  auto grid_node = make_unique<Grid>(0.1, 100, 100,100, isosurface);
   
   grid_ptr_ = grid_node.get();
 
@@ -93,16 +89,12 @@ void SkeletonViewerApp::DrawGUI() {
       //std::cout << i << std::endl;
       if (i == 0) {
           modifiedval |= ImGui::SliderFloat("", &slider_values_[0].rx, 0.0f, 1.0f);
-          //modified |= ImGui::SliderFloat("y", &slider_values_[i].ry, -kPi, kPi);
-         // modifiedval |= ImGui::SliderFloat("z", &slider_values_[i].rz, -kPi, kPi);
       }
       else if (i == 1) {
           modifieddim |= ImGui::SliderFloat("", &slider_values_[1].rx, 0.05f, 0.25f);
       }
       else {
           modifieddim |= ImGui::SliderInt("", &dim_values_[i - 2].x, 5, 100);
-          //modifieddim |= ImGui::SliderInt("", &dim_values_[i - 1].x, 5, 10);
-          //modifieddim |= ImGui::SliderInt("", &dim_values_[i - 1].x, 5, 10);
       }
       ImGui::PopID();
   }

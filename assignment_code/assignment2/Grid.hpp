@@ -48,7 +48,7 @@ class Grid : public SceneNode {
         std::vector<SkeletonNode::EulerAngle*> linked_values_;
         std::vector<SkeletonNode::IntNode*> dim_values_;
 
-        Grid(glm::vec3 origin, float d_, int x_, int y_, int z_, IsoSurface isosurface);
+        Grid(float d_, int x_, int y_, int z_, IsoSurface isosurface);
     
         void LinkControl(const std::vector<SkeletonNode::EulerAngle*>&, const std::vector<SkeletonNode::IntNode*>&);
         void OnChangedValue();

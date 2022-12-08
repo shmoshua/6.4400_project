@@ -9,7 +9,7 @@
 
 namespace GLOO {
 
-Grid::Grid(glm::vec3 origin, float d_, int x_, int y_, int z_, IsoSurface isosurface): origin_(origin), d(d_), x(x_), y(y_), z(z_), isosurface_(isosurface){
+Grid::Grid(float d_, int x_, int y_, int z_, IsoSurface isosurface): d(d_), x(x_), y(y_), z(z_), isosurface_(isosurface){
     computePositions();
     computeValues();
     drawGrid();
@@ -51,6 +51,7 @@ void Grid::computeValues(){
 }
 
 void Grid::computePositions(){
+    origin_ = glm::vec3(0,0,0) - 0.5f * d * glm::vec3(x,y,z);
     positions_.clear();
     positions_.reserve((x+1)*(y+1)*(z+1));
     for (int i = 0; i <= x; i++){
