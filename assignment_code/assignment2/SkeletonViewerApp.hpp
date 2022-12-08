@@ -16,6 +16,7 @@ class SkeletonViewerApp : public Application {
   const int INITIAL_X = 20;
   const int INITIAL_Y = 20;
   const int INITIAL_Z = 20;
+ const float EPS = 0.4f;
 
  protected:
   void DrawGUI() override;
