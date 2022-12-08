@@ -60,7 +60,8 @@ void SkeletonViewerApp::SetupScene() {
   std::function<float(glm::vec3)> cube2 = [](glm::vec3 point) {return glm::sin(point[0]*point[1] + point[1]*point[2] + point[0]*point[2]) + glm::sin(point[0]*point[1]) + glm::sin(point[0]*point[2]) + glm::sin(point[2]*point[1]);};
   std::function<float(glm::vec3)> func = [](glm::vec3 point) {return 0;};
 
-  IsoSurface isosurface = IsoSurface(cube1, 0.4f);
+  IsoSurface isosurface = IsoSurface(bump, EPS);
+  slider_values_[0].rx = EPS;
   auto grid_node = make_unique<Grid>(INITIAL_D, INITIAL_X, INITIAL_Y, INITIAL_Z, isosurface);
   
   grid_ptr_ = grid_node.get();
