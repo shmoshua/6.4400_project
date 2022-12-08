@@ -19,7 +19,7 @@ SkeletonViewerApp::SkeletonViewerApp(const std::string& app_name,
                                      glm::ivec2 window_size)
     : Application(app_name, window_size),
       slider_values_(2, {0.f, 0.f, 0.f}),
-    dim_values_(3, {5, 5, 5}) {}
+    dim_values_(3, {INITIAL_X, INITIAL_Y, INITIAL_Z}) {}
 
 void SkeletonViewerApp::SetupScene() {
   SceneNode& root = scene_->GetRootNode();
@@ -61,13 +61,13 @@ void SkeletonViewerApp::SetupScene() {
   std::function<float(glm::vec3)> func = [](glm::vec3 point) {return 0;};
 
   IsoSurface isosurface = IsoSurface(cube1, 0.4f);
-  auto grid_node = make_unique<Grid>(0.1, 100, 100,100, isosurface);
+  auto grid_node = make_unique<Grid>(INITIAL_D, INITIAL_X, INITIAL_Y, INITIAL_Z, isosurface);
   
   grid_ptr_ = grid_node.get();
 
   std::vector<SkeletonNode::EulerAngle*> angles;
   std::vector<SkeletonNode::IntNode*> dims;
-  slider_values_[1].rx = 0.15;
+  slider_values_[1].rx = INITIAL_D;
   for (size_t i = 0; i < slider_values_.size(); i++) {
       angles.push_back(&slider_values_[i]);
   }
