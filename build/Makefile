@@ -248,6 +248,30 @@ assignment_code/assignment2/IsoSurface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.s
 .PHONY : assignment_code/assignment2/IsoSurface.cpp.s
 
+assignment_code/assignment2/Perlin.o: assignment_code/assignment2/Perlin.cpp.o
+.PHONY : assignment_code/assignment2/Perlin.o
+
+# target to build an object file
+assignment_code/assignment2/Perlin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o
+.PHONY : assignment_code/assignment2/Perlin.cpp.o
+
+assignment_code/assignment2/Perlin.i: assignment_code/assignment2/Perlin.cpp.i
+.PHONY : assignment_code/assignment2/Perlin.i
+
+# target to preprocess a source file
+assignment_code/assignment2/Perlin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.i
+.PHONY : assignment_code/assignment2/Perlin.cpp.i
+
+assignment_code/assignment2/Perlin.s: assignment_code/assignment2/Perlin.cpp.s
+.PHONY : assignment_code/assignment2/Perlin.s
+
+# target to generate assembly for a file
+assignment_code/assignment2/Perlin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/assignment2.dir/build.make CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.s
+.PHONY : assignment_code/assignment2/Perlin.cpp.s
+
 assignment_code/assignment2/SkeletonNode.o: assignment_code/assignment2/SkeletonNode.cpp.o
 .PHONY : assignment_code/assignment2/SkeletonNode.o
 
@@ -1133,6 +1157,9 @@ help:
 	@echo "... assignment_code/assignment2/IsoSurface.o"
 	@echo "... assignment_code/assignment2/IsoSurface.i"
 	@echo "... assignment_code/assignment2/IsoSurface.s"
+	@echo "... assignment_code/assignment2/Perlin.o"
+	@echo "... assignment_code/assignment2/Perlin.i"
+	@echo "... assignment_code/assignment2/Perlin.s"
 	@echo "... assignment_code/assignment2/SkeletonNode.o"
 	@echo "... assignment_code/assignment2/SkeletonNode.i"
 	@echo "... assignment_code/assignment2/SkeletonNode.s"

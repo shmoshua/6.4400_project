@@ -1,4 +1,4 @@
-#include "Grid.hpp"
+#include "GridPerlin.hpp"
 
 #include "gloo/shaders/PhongShader.hpp"
 #include "gloo/components/RenderingComponent.hpp"
@@ -9,7 +9,7 @@
 
 namespace GLOO {
 
-Grid::Grid(float d_, int x_, int y_, int z_, IsoSurface isosurface): d(d_), x(x_), y(y_), z(z_), isosurface_(isosurface){
+GridPerlin::GridPerlin(float d_, int x_, int y_, int z_, ): d(d_), x(x_), y(y_), z(z_), isosurface_(isosurface){
     computePositions();
     computeValues();
     drawGrid();
@@ -24,8 +24,7 @@ Grid::Grid(float d_, int x_, int y_, int z_, IsoSurface isosurface): d(d_), x(x_
     computeCubeIndex();
     addInterpolationPoints();
     addPoints();
-    if (normal1) computeNormals();
-    else computeNormals2();
+    //computeNormals2();
 
     auto surface_node = make_unique<SceneNode>();
     surface_node->CreateComponent<ShadingComponent>(phong_shader_);
@@ -249,7 +248,7 @@ void Grid::computeNormals2(){
 
   for (auto p:positions){
       float val = isosurface_.function_(p);
-      float e = 0.000003f;
+      float e = 0.0003f;
       float nx = isosurface_.function_(p + glm::vec3(e,0,0)) - val;
       float ny = isosurface_.function_(p + glm::vec3(0,e,0)) - val;
       float nz = isosurface_.function_(p + glm::vec3(0,0,e)) - val;
@@ -303,18 +302,6 @@ void Grid::Update(double delta_time) {
   } else if (InputManager::GetInstance().IsKeyReleased('G')) {
     prev_released = true;
   }
-
-  static bool prev_released2 = true;
-  if (InputManager::GetInstance().IsKeyPressed('N')) {
-    if (prev_released2) {
-        normal1 = 1 - normal1;
-        if (normal1) computeNormals();
-        else computeNormals2();
-    }
-    prev_released2 = false;
-  } else if (InputManager::GetInstance().IsKeyReleased('N')) {
-    prev_released2 = true;
-  }
 }
 
 void Grid::ToggleGrid(){
@@ -336,8 +323,7 @@ void Grid::OnChangedValue() {
     computeCubeIndex();
     addInterpolationPoints();
     addPoints();
-    if (normal1) computeNormals();
-    else computeNormals2();
+    computeNormals2();
 }
 
 void Grid::OnChangedDimension() {
@@ -351,8 +337,7 @@ void Grid::OnChangedDimension() {
     computeCubeIndex();
     addInterpolationPoints();
     addPoints();
-    if (normal1) computeNormals();
-    else computeNormals2();
+    computeNormals2();
 }
 
 

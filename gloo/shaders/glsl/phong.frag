@@ -62,15 +62,17 @@ void main() {
 }
 
 vec3 GetAmbientColor() {
-
+    //return material.ambient;
     return material.ambient + vec3(0.0, world_position[1]/10, -world_position[1]/10);
 }
 
 vec3 GetDiffuseColor() {
+    //return material.diffuse;
     return material.diffuse + vec3(0.0, world_position[1]/10, -world_position[1]/10);
 }
 
 vec3 GetSpecularColor() {
+    //return material.specular ;
     return material.specular + vec3(0.0, world_position[1]/10, -world_position[1]/10);
 }
 

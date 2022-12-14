@@ -16,7 +16,6 @@ class SkeletonViewerApp : public Application {
   void DrawGUI() override;
 
  private:
-  SkeletonNode* skeletal_node_ptr_;
   Grid* grid_ptr_;
   std::vector<SkeletonNode::IntNode> dim_values_;
   std::vector<SkeletonNode::EulerAngle> slider_values_;

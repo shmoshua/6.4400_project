@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.o.d"
   "CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.o"
   "CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.o.d"
+  "CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o"
+  "CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o.d"
   "CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o"
   "CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o.d"
   "CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o"

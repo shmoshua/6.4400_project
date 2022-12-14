@@ -26,6 +26,8 @@ class Grid : public SceneNode {
         int z;
 
         IsoSurface isosurface_;
+        bool isPerlin_;
+        std::vector<std::vector<float>> arr_;
 
         std::vector<glm::vec3> positions_;
         std::vector<float> values_;
@@ -34,7 +36,6 @@ class Grid : public SceneNode {
 
         SceneNode* grid;
         bool showGrid=false;
-        bool normal1 =true;
 
         std::shared_ptr<PhongShader> phong_shader_ = std::make_shared<PhongShader>();
         std::shared_ptr<SimpleShader> polyline_shader_ = std::make_shared<SimpleShader>();
@@ -44,7 +45,7 @@ class Grid : public SceneNode {
         std::vector<SkeletonNode::EulerAngle*> linked_values_;
         std::vector<SkeletonNode::IntNode*> dim_values_;
 
-        Grid(float d_, int x_, int y_, int z_, IsoSurface isosurface);
+        Grid(float d_, int x_, int y_, int z_, IsoSurface isosurface, bool isPerlin, std::vector<std::vector<float>> arr_);
     
         void LinkControl(const std::vector<SkeletonNode::EulerAngle*>&, const std::vector<SkeletonNode::IntNode*>&);
         void OnChangedValue();

@@ -545,10 +545,24 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/IsoSurface.cpp -o CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.s
 
+CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o: CMakeFiles/assignment2.dir/flags.make
+CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/Perlin.cpp
+CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o: CMakeFiles/assignment2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o -MF CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o.d -o CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o -c /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/Perlin.cpp
+
+CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/Perlin.cpp > CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.i
+
+CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/Perlin.cpp -o CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.s
+
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: CMakeFiles/assignment2.dir/flags.make
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.cpp
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o: CMakeFiles/assignment2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o -MF CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o.d -o CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o -c /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonNode.cpp
 
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.i: cmake_force
@@ -562,7 +576,7 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.s: cmake
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: CMakeFiles/assignment2.dir/flags.make
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonViewerApp.cpp
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o: CMakeFiles/assignment2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o -MF CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o.d -o CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o -c /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/SkeletonViewerApp.cpp
 
 CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.i: cmake_force
@@ -576,7 +590,7 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.s: 
 CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: CMakeFiles/assignment2.dir/flags.make
 CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/main.cpp
 CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o: CMakeFiles/assignment2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o -MF CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o.d -o CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o -c /Users/joshua/Desktop/CG/6.4400_project/assignment_code/assignment2/main.cpp
 
 CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.i: cmake_force
@@ -590,7 +604,7 @@ CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.s: cmake_force
 CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o: CMakeFiles/assignment2.dir/flags.make
 CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o: /Users/joshua/Desktop/CG/6.4400_project/assignment_code/common/helpers.cpp
 CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o: CMakeFiles/assignment2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o -MF CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o.d -o CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o -c /Users/joshua/Desktop/CG/6.4400_project/assignment_code/common/helpers.cpp
 
 CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.i: cmake_force
@@ -637,6 +651,7 @@ assignment2_OBJECTS = \
 "CMakeFiles/assignment2.dir/external/src/imgui/examples/imgui_impl_opengl3.cpp.o" \
 "CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.o" \
 "CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.o" \
+"CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o" \
 "CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o" \
 "CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o" \
 "CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o" \
@@ -679,6 +694,7 @@ assignment2: CMakeFiles/assignment2.dir/external/src/imgui/examples/imgui_impl_g
 assignment2: CMakeFiles/assignment2.dir/external/src/imgui/examples/imgui_impl_opengl3.cpp.o
 assignment2: CMakeFiles/assignment2.dir/assignment_code/assignment2/Grid.cpp.o
 assignment2: CMakeFiles/assignment2.dir/assignment_code/assignment2/IsoSurface.cpp.o
+assignment2: CMakeFiles/assignment2.dir/assignment_code/assignment2/Perlin.cpp.o
 assignment2: CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonNode.cpp.o
 assignment2: CMakeFiles/assignment2.dir/assignment_code/assignment2/SkeletonViewerApp.cpp.o
 assignment2: CMakeFiles/assignment2.dir/assignment_code/assignment2/main.cpp.o
@@ -686,7 +702,7 @@ assignment2: CMakeFiles/assignment2.dir/assignment_code/common/helpers.cpp.o
 assignment2: CMakeFiles/assignment2.dir/build.make
 assignment2: external/src/glfw-3.3.2/src/libglfw3.a
 assignment2: CMakeFiles/assignment2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking CXX executable assignment2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/joshua/Desktop/CG/6.4400_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Linking CXX executable assignment2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/assignment2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
